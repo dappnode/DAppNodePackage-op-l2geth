@@ -1,19 +1,21 @@
 version: "3.5"
 services:
-  geth:
+  l2geth:
     build:
-      context: op-geth
+      context: l2geth
       args:
-        UPSTREAM_VERSION: v1.101105.3
+        UPSTREAM_VERSION: 0.5.31
     volumes:
       - "data:/data"
-    ports:
-      - "33141:33141/tcp"
-      - "33141:33141/udp"
     restart: unless-stopped
     environment:
+      - "RPC_API=eth,rollup,net,web3,debug"
+      - RPC_ADDR=0.0.0.0
+      - RPC_CORS_DOMAIN=*
+      - RPC_ENABLE=true
+      - RPC_PORT=8545
+      - RPC_VHOSTS=*
       - EXTRA_FLAGS
-      - P2P_PORT=33141
-      - SYNCMODE=snap
+    image: "l2geth.op-l2geth.dnp.dappnode.eth:0.1.0"
 volumes:
   data: {}

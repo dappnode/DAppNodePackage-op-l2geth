@@ -1,3 +1,3 @@
-# DAppNodePackage-op-geth
+# DAppNodePackage-op-l2geth
 
-OP-geth is a minimal fork of the official `go-ethereum`. In the OP environment, OP-geth acts as the Execution Engine, which is responsible for executing the blocks it receives from the rollup node and storing state. It also exposes standard JSON-RPC methods to query blockchain data and submit transactions to the network.
+If you are running a node for an upgraded network like Goerli or mainnet, you will also need to run Legacy Geth in order to serve historical execution traces. Fundamentally, Legacy Geth is our old l2geth binary running against a preconfigured data directory. 
