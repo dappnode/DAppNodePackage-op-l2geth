@@ -9,12 +9,6 @@ services:
       - "data:/data"
     restart: unless-stopped
     environment:
-      - "RPC_API=eth,rollup,net,web3,debug"
-      - RPC_ADDR=0.0.0.0
-      - RPC_CORS_DOMAIN=*
-      - RPC_ENABLE=true
-      - RPC_PORT=8545
-      - RPC_VHOSTS=*
       - EXTRA_FLAGS
     image: "l2geth.op-l2geth.dnp.dappnode.eth:0.1.0"
 volumes:
