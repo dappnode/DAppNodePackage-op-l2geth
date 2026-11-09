@@ -1,9 +1,13 @@
 {
   "name": "op-l2geth.dnp.dappnode.eth",
   "version": "0.1.0",
-  "upstreamVersion": "0.5.31",
-  "upstreamRepo": "ethereum-optimism/l2geth",
-  "upstreamArg": "UPSTREAM_VERSION",
+  "upstream": [
+    {
+      "repo": "ethereum-optimism/l2geth",
+      "version": "0.5.31",
+      "arg": "UPSTREAM_VERSION"
+    }
+  ],
   "shortDescription": "Legacy Geth execution client for OP archive nodes. Used to query pre-bedrock transactions.",
   "description": "To run an OP node, you will need to run this Legacy Geth in order to serve historical execution traces. ",
   "type": "service",
